@@ -8,18 +8,87 @@ export const ArrayRendering = () => {
     { id: 4, make: 'Tesla', model: 'Model S', year: 2022, owner: 'Sarah' },
   ];
 
+  const bands = [
+    {
+      band: 'The Clash',
+      yearFormed: 1976,
+      albums: 6,
+      mostFamousSong: 'London Calling',
+    },
+    {
+      band: 'Sex Pistols',
+      yearFormed: 1975,
+      albums: 1,
+      mostFamousSong: 'Anarchy in the UK',
+    },
+    {
+      band: 'Ramones',
+      yearFormed: 1974,
+      albums: 14,
+      mostFamousSong: 'Blitzkrieg Bop',
+    },
+    {
+      band: 'The Cure',
+      yearFormed: 1976,
+      albums: 13,
+      mostFamousSong: 'Just Like Heaven',
+    },
+    {
+      band: 'Joy Division',
+      yearFormed: 1976,
+      albums: 2,
+      mostFamousSong: 'Love Will Tear Us Apart',
+    },
+    {
+      band: 'Siouxsie and the Banshees',
+      yearFormed: 1976,
+      albums: 11,
+      mostFamousSong: 'Hong Kong Garden',
+    },
+  ];
+
   return (
     <div>
-      Auta:
-      <br />
-      {cars.map((car) => {
-        return (
-          <li key={car.id}>
-            {car.make} {car.model} ({car.year}) - <b>{car.owner}</b>
-          </li>
-        );
-      })}
+      <div>
+        Auta:
+        <br />
+        {cars.map((car) => {
+          return (
+            <li key={car.id}>
+              {car.make} {car.model} ({car.year}) - <b>{car.owner}</b>
+            </li>
+          );
+        })}
+      </div>
+      <div>
+        {/* // key musi mieć unikalna wartosc */}
+        <table>
+          <tr>
+            <th>Band</th>
+            <th>Year formed</th>
+            <th>No. of albums</th>
+            <th>Most famous song</th>
+          </tr>
+          {bands.map(({ band, yearFormed, albums, mostFamousSong }) => {
+            return (
+              <tr key={band}>
+                <td>{band}</td>
+                <td>{yearFormed}</td>
+                <td>{albums}</td>
+                <td>{mostFamousSong}</td>
+              </tr>
+            );
+          })}
+          <tr className="footer">
+            <td colSpan={2} className="right">
+              Total albums
+            </td>
+            <td colSpan={2} className="left">
+              77
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    // key musi mieć unikalna wartosc
   );
 };
