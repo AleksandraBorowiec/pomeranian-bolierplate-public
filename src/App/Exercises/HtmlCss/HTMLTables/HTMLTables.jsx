@@ -2,6 +2,13 @@ import './html-tables.css';
 import { StarIcon } from './StarIcon';
 
 export function HTMLTables() {
+  const generateStars = (amount) => {
+    let content = [];
+    for (let i = 0; i < amount; i++) {
+      content.push(<StarIcon />);
+    }
+    return content;
+  };
   return (
     <div>
       <table className="first-table">
@@ -58,48 +65,27 @@ export function HTMLTables() {
         <tr>
           <td>Cape Verde Islands</td>
           <td>#100120</td>
-          <td className="last-col">
-            <StarIcon />
-            <StarIcon />
-          </td>
+          <td className="last-col">{generateStars(2)}</td>
         </tr>
         <tr>
           <td>Cape Verde Islands</td>
           <td>#100120</td>
-          <td className="last-col">
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-          </td>
+          <td className="last-col">{generateStars(3)}</td>
         </tr>
         <tr>
           <td>Cape Verde Islands</td>
           <td>#100120</td>
-          <td className="last-col">
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-          </td>
+          <td className="last-col">{generateStars(5)}</td>
         </tr>
         <tr>
           <td>Cape Verde Islands</td>
           <td>#100120</td>
-          <td className="last-col">
-            <StarIcon />
-          </td>
+          <td className="last-col">{generateStars(1)}</td>
         </tr>
         <tr>
           <td className="bottom-left-border">Cape Verde Islands</td>
           <td>#100120</td>
-          <td className="last-col bottom-right-border">
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-          </td>
+          <td className="last-col bottom-right-border">{generateStars(5)}</td>
         </tr>
       </table>
     </div>
