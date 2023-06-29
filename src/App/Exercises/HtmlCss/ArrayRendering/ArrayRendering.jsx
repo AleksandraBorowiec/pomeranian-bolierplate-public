@@ -1,4 +1,4 @@
-import './styles.css';
+import './array-rendering.css';
 
 export const ArrayRendering = () => {
   const cars = [
@@ -50,7 +50,7 @@ export const ArrayRendering = () => {
   return (
     <div>
       <div>
-        Auta:
+        <b>Auta:</b>
         <br />
         {cars.map((car) => {
           return (
@@ -60,10 +60,12 @@ export const ArrayRendering = () => {
           );
         })}
       </div>
+      <br />
+      <br />
       <div>
         {/* // key musi mieć unikalna wartosc */}
         <table>
-          <tr>
+          <tr className="background-image">
             <th>Band</th>
             <th>Year formed</th>
             <th>No. of albums</th>
@@ -79,7 +81,7 @@ export const ArrayRendering = () => {
               </tr>
             );
           })}
-          <tr className="footer">
+          <tr className="footer background-image">
             <td colSpan={2} className="right">
               Total albums
             </td>
